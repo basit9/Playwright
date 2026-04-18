@@ -1,11 +1,15 @@
-name: Hello World QA
+name: Playwright Tests
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
-  greet:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: echo "Repo checked out successfully!"
-      - run: ls -la
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npx playwright install --with-deps
+      - run: npx playwright test
