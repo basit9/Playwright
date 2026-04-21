@@ -15,4 +15,7 @@ test('get started link', async ({ page }) => {
 
   // Expects page to have a heading with the name of Installation.
   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
+
+  // Force failure to see the trace viewer in action.
+  await expect(page.getByRole('heading', { name: 'FAILURE' })).toBeHidden();
 });
