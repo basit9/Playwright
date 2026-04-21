@@ -1,0 +1,4 @@
+interface:
+  display_name: "Playwright CLI Session"
+  short_description: "Keep Playwright CLI sessions alive"
+  default_prompt: "Use $playwright-cli-session to keep a Playwright CLI browser session alive across multiple calls while interacting like a real user." 
